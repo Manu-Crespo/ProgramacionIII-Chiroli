@@ -1,0 +1,52 @@
+---
+// src/layouts/BaseLayout.astro
+import NavBar from '../components/navBar.astro';
+
+// Definimos las propiedades (props) que espera este Layout, usando TS para tipado
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+</head>
+<body>
+  
+  <NavBar /> <main>
+    <slot /> </main>
+
+  <style is:global>
+    /* Estilos Globales (sin cambios) */
+    :root {
+      font-family: system-ui, sans-serif;
+      color: #333;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+
+    /* Mueve el contenido principal a la derecha de la barra de 200px de ancho */
+    main {
+      margin-left: 200px; 
+      padding: 40px; 
+      max-width: 1000px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #007bff; 
+      padding-bottom: 5px;
+      margin-top: 50px;
+    }
+  </style>
+</body>
+</html>

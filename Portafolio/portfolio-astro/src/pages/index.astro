@@ -1,0 +1,177 @@
+---
+import Layout from '../layouts/Layout.astro'; // Asumiendo que usas un layout
+import NavBar from '../components/navBar.astro';
+// Otros imports
+---
+
+<Layout title="Mi Portfolio Astro">
+  <NavBar /> 
+  
+  <header>
+    <h1>Portfoli(0)</h1>
+  </header>
+
+  <section id="sobre-mi">
+    <h2>Sobre mí</h2>
+    <p>
+      ¡Hola! Soy [Tu Nombre], un desarrollador web enfocado en la creación de experiencias 
+      digitales rápidas y modernas. Mi pasión se centra en transformar ideas en código 
+      funcional, utilizando las mejores prácticas de desarrollo. Estoy constantemente
+      aprendiendo y explorando nuevas tecnologías para construir soluciones escalables.
+    </p>
+  </section>
+
+  <section id="tecnologias">
+    <h2>Tecnologías</h2>
+    <div class="icon-list">
+      
+      <div class="tech-icon">[Icono de Astro]<span>Astro</span></div>
+      <div class="tech-icon">[Icono de HTML5]<span>HTML5</span></div>
+      <div class="tech-icon">[Icono de CSS3]<span>CSS3</span></div>
+      <div class="tech-icon">[Icono de TypeScript]<span>TypeScript</span></div>
+      
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <h2>Proyectos</h2>
+    <div class="projects-grid">
+      
+      <article class="project-card">
+        <div class="preview">[Vista Previa del Proyecto 1]</div>
+        <h3>Proyecto de Blog Estático</h3>
+        <p class="description">
+          Un blog personal enfocado en el rendimiento y SEO. Utiliza el poder de la generación estática.
+        </p>
+        <p class="tech-used">
+          **Tecnologías:** Astro, Markdown, CSS (local), TypeScript.
+        </p>
+      </article>
+      
+      <article class="project-card">
+        <div class="preview">[Vista Previa del Proyecto 2]</div>
+        <h3>App de Tareas Dinámica</h3>
+        <p class="description">
+          Una aplicación para gestionar tareas pendientes con filtros y persistencia de datos local.
+        </p>
+        <p class="tech-used">
+          **Tecnologías:** Astro (Islands Architecture), Vue.js, CSS Modules.
+        </p>
+      </article>
+
+      </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <div class="contact-list">
+      
+      <a href="[Tu URL de LinkedIn]" target="_blank" class="contact-icon">
+        [Icono LinkedIn]
+        <span>LinkedIn</span>
+      </a>
+      
+      <a href="[Tu URL de GitHub]" target="_blank" class="contact-icon">
+        [Icono GitHub]
+        <span>GitHub</span>
+      </a>
+
+      <a href="mailto:[Tu Email]" class="contact-icon">
+        [Icono Email]
+        <span>Email</span>
+      </a>
+
+      <a href="tel:[Tu Número]" class="contact-icon">
+        [Icono Teléfono]
+        <span>Teléfono</span>
+      </a>
+
+    </div>
+  </section>
+  
+  <style>
+    /* Estilos para el Título y Tecnologías (sin cambios) */
+    h1 {
+      font-size: 3em;
+      color: #007bff; 
+      margin-bottom: 50px;
+    }
+    .icon-list, .contact-list {
+      display: flex; 
+      gap: 30px; 
+      flex-wrap: wrap; 
+      margin-bottom: 40px;
+    }
+    .tech-icon, .contact-icon {
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
+      text-align: center;
+      text-decoration: none; /* Quitar el subrayado de los enlaces de contacto */
+      color: inherit;
+    }
+
+    /* Estilo de ejemplo para los placeholders de icono */
+    .tech-icon > :first-child, .contact-icon > :first-child { 
+      width: 60px;
+      height: 60px;
+      background-color: #eee;
+      border-radius: 10px;
+      line-height: 60px;
+      font-weight: bold;
+      color: #999;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s; /* Agregamos una transición para el hover */
+    }
+    .contact-icon:hover > :first-child {
+      transform: scale(1.1); /* Efecto hover en los iconos de contacto */
+      background-color: #ddd;
+    }
+
+    /* Estilos para Proyectos (Grid y Tarjetas) */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2-3 tarjetas por fila */
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .project-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      transition: box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .project-card h3 {
+      color: #007bff;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    .project-card .preview {
+      height: 150px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .project-card .tech-used {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 10px;
+    }
+  </style>
+
+
+</Layout>

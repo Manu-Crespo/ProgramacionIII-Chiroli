@@ -1,0 +1,65 @@
+---
+// src/components/Card.astro
+
+// Definición de las props con TypeScript
+interface Props {
+  title: string;
+  description: string;
+  tech: string;
+  previewText: string;
+}
+
+const { title, description, tech, previewText } = Astro.props;
+---
+
+<article class="project-card">
+  <div class="preview">
+    {previewText}
+  </div>
+  
+  <h3>{title}</h3>
+  <p class="description">
+    {description}
+  </p>
+  <p class="tech-used">
+    **Tecnologías:** {tech}
+  </p>
+</article>
+
+<style>
+  .project-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s;
+  }
+
+  .project-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-card h3 {
+    color: #007bff;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  .project-card .preview {
+    height: 150px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .project-card .tech-used {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+  }
+</style>

@@ -1,0 +1,59 @@
+<nav>
+  <ul>
+    <li><a href="#inicio">FOTO</a></li>
+    <li><a href="#acerca">Sobre mí</a></li>
+    <li><a href="#proyectos">Tecnologias</a></li>
+    <li><a href="#contacto">Proyectos</a></li>
+    <li><a href="#contacto">CV</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#contacto">Tema</a></li>
+    <li><a href="#contacto">TOP</a></li>
+  </ul>
+</nav>
+
+<style>
+  /* Aquí va el CSS para el estilo y la posición */
+  nav {
+    /* Propiedades de Posicionamiento y Tamaño */
+    position: fixed; /* Fija la barra en la pantalla */
+    top: 0;          /* Pega al borde superior */
+    left: 0;         /* Pega al borde izquierdo */
+    height: 100vh;   /* Ocupa el 100% del alto de la ventana (viewport height) */
+    width: 200px;    /* Define un ancho fijo para la barra (ajusta según necesites) */
+    
+    /* Propiedades de Estilo (ejemplo) */
+    background-color: #333; /* Color de fondo oscuro */
+    padding: 20px 0; /* Espacio vertical interno */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra para destacarla */
+    z-index: 100; /* Asegura que esté por encima de otros contenidos */
+    
+    /* Centrado de elementos (opcional, si quieres el texto centrado) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Ocupa todo el ancho del nav */
+  }
+
+  li {
+    text-align: center;
+    margin-bottom: 15px; /* Espacio entre los ítems */
+  }
+
+  a {
+    color: white; /* Color del texto */
+    text-decoration: none; /* Quita el subrayado */
+    font-size: 1.1em;
+    padding: 10px;
+    display: block; /* Para que el área de clic sea más grande */
+  }
+
+  a:hover {
+    background-color: #555; /* Cambio de color al pasar el ratón */
+  }
+</style>
