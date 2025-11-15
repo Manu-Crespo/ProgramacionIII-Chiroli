@@ -2,9 +2,8 @@ body {
   font-family: 'Segoe UI', sans-serif;
   scroll-behavior: smooth;
   background-color: #000;
-  /*background-image: url(https://static.vecteezy.com/system/resources/previews/007/153/281/non_2x/abstract-black-background-with-diagonal-lines-modern-dark-abstract-texture-design-for-presentations-or-business-free-vector.jpg);*/
-  background: 
-    linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),  url("https://static.vecteezy.com/system/resources/previews/007/153/281/non_2x/abstract-black-background-with-diagonal-lines-modern-dark-abstract-texture-design-for-presentations-or-business-free-vector.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),  
+    url("https://static.vecteezy.com/system/resources/previews/007/153/281/non_2x/abstract-black-background-with-diagonal-lines-modern-dark-abstract-texture-design-for-presentations-or-business-free-vector.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -27,6 +26,7 @@ p{
 a{
   font-size: 30px;
 }
+
 #sidebar {
   position: sticky;   /* se queda pegado durante el scroll */
   top: 0;
@@ -74,25 +74,42 @@ a{
 }
 
 .tech-card img {
-  width: 100px;        /* tamaño horizontal */
-  height: 100px;       /* tamaño vertical */
+  width: 100px;        
+  height: 100px;       
   object-fit: contain;
+  border-radius: 10px;
 }
 
 .tech-card:hover {
   transform: scale(1.05);
 }
 
-.tech-card-edit img{
-  border-radius: 20px;
-  width: 100px;        /* tamaño horizontal */
-  height: 100px;       /* tamaño vertical */
-  object-fit: contain;
+/* Tooltip con nombre de la tecnología */
+.tech-card {
+  position: relative;
 }
 
-.tech-card-edit:hover {
-  transform: scale(1.05);
+.tech-card::after {
+  content: attr(data-tech);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
 }
+
+.tech-card:hover::after {
+  opacity: 1;
+}
+
 
 .card {
   border: none;
@@ -103,47 +120,69 @@ a{
   height: 350px;       /* la altura que quieras */
   width: auto;        /* mantiene proporción */
   object-fit: cover; 
+  border-radius: 12px;
 }
 
-.social-placeholder {
-  padding: 20px 30px;
-  font-weight: bold;
-  background-color: transparent;
-  transition: 0.3s;
-  cursor: default;
-  width: 120px;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
+h5 {
+  text-decoration: underline;
 }
 
-.social-placeholder img {
-  width: 100px;        /* tamaño horizontal */
-  height: 100px;       /* tamaño vertical */
-  object-fit: contain;
+.tech-card {
+  position: relative;
 }
 
-.social-placeholder:hover {
-  transform: scale(1.05);
+.tech-card::after {
+  content: attr(data-tech);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
 }
+
+.tech-card:hover::after {
+  opacity: 1;
+}
+
+
 
 form .form-control {
   border-radius: 10px;
 }
 
 /* Color del placeholder */
-form input::placeholder,
-form textarea::placeholder {
-  color: #aaa;    /* Cambialo por el color que quieras */
+.form-control::placeholder {
+  color: #919191;    /* Cambialo por el color que quieras */
   opacity: 1;     /* Para que no se haga más claro automáticamente */
 }
 
-/* Placeholder cuando el input está enfocado (opcional, queda fachero) */
-form input:focus::placeholder,
-form textarea:focus::placeholder {
-  color: #888;
+#form-message {
+  font-size: 1rem;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+#form-message.success {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+  opacity: 1;
+}
+
+#form-message.error {
+  background-color: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+  opacity: 1;
 }
 
 #arrow {
@@ -188,11 +227,70 @@ form textarea:focus::placeholder {
 
 /* Ajustes para pantallas chicas */
 @media (max-width: 767px) {
+
+  html, body {
+  overflow-x: hidden;
+}
+
   main {
     padding: 2rem 1rem !important;
   }
 
   .tech-card {
     padding: 15px 25px;
+  }
+
+  #offcanvasSidebar img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  /* Ajustar la lista del menú */
+  #offcanvasSidebar .nav {
+    gap: 1.2rem; /* separación entre items */
+    margin-top: 1rem;
+  }
+
+  #offcanvasSidebar .nav-link {
+    font-size: 1.2rem;
+    padding: 0.7rem 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Ajuste general del offcanvas */
+  #offcanvasSidebar .offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Espaciado superior e inferior */
+  #offcanvasSidebar .offcanvas-header {
+    padding-bottom: 0;
+  }
+
+  #offcanvasSidebar .offcanvas-body {
+    padding-top: 0.5rem;
+  }
+
+  .modal-dialog {
+  max-width: 100% !important;
+  margin: 0;
+  }
+
+  .modal-content {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  /* El iframe del CV debe ajustarse */
+  .modal-body iframe {
+    width: 100% !important;
+    height: 75vh; /* Ajusta la altura a tus gustos */
+    border: none;
+    display: block;
   }
 }
