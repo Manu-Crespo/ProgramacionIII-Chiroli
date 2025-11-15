@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfoli(o)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geo:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body class="text-light geo-regular-italic">
+  <!-- Navbar móvil -->
+  <nav class="navbar navbar-dark bg-dark d-md-none px-3 py-2 border-bottom border-secondary">
+    <a class="navbar-brand fw-bold" href="#">PORTFOLI(O)</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
+  <!-- Sidebar móvil -->
+  <div class="offcanvas offcanvas-start bg-dark text-light" tabindex="-1" id="offcanvasSidebar">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menú</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body text-center">
+      <img src="../portfolio-astro/img/111.jpg" alt="Foto perfil" class="rounded-circle border border-light mb-3">
+      <ul class="nav flex-column">
+        <li class="nav-item"><a href="#sobre-mi" class="nav-link text-light" data-bs-dismiss="offcanvas">SOBRE MI</a></li>
+        <li class="nav-item"><a href="#tecnologias" class="nav-link text-light" data-bs-dismiss="offcanvas">TECNOLOGIAS</a></li>
+        <li class="nav-item"><a href="#proyectos" class="nav-link text-light" data-bs-dismiss="offcanvas">PROYECTOS</a></li>
+        <li class="nav-item"><a href="../portfolio-astro/CV.pdf" class="nav-link text-light" id="cv-btn" data-bs-dismiss="offcanvas">CV</a></li>
+        <li class="nav-item"><a href="#contacto" class="nav-link text-light" data-bs-dismiss="offcanvas">CONTACTO</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar Desktop -->
+    <nav id="sidebar" class="col-md-3 col-lg-2 d-none d-md-flex flex-column justify-content-between align-items-center py-4">
+        <div class="foto mb-4">
+        <img src="../portfolio-astro/img/111.jpg" 
+             alt="Foto perfil" 
+             class="rounded-circle border border-light">
+        </div>
+        <ul class="nav flex-column text-center w-100 gap-5">
+        <li class="nav-item"><a href="#sobre-mi" class="nav-link text-light fs-4">SOBRE MI</a></li>
+        <li class="nav-item"><a href="#tecnologias" class="nav-link text-light fs-4">TECNOLOGIAS</a></li>
+        <li class="nav-item"><a href="#proyectos" class="nav-link text-light fs-4">PROYECTOS</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-light fs-4" data-bs-toggle="modal" data-bs-target="#cvModal">CV</a></li>
+        <li class="nav-item"><a href="#contacto" class="nav-link text-light fs-4">CONTACTO</a></li>
+        </ul>
+        <div class="d-flex flex-column align-items-center gap-4 mb-3">
+        <div class="text-center">
+          <button class="arrow" id="scroll"><img src="../portfolio-astro/img/location-arrow-alt-svgrepo-com.svg" 
+             alt="arrow"></button>
+          <div class="mt-2 fs-3">TOP</div>
+        </div>
+      </div>
+    </nav>
+
+  <!-- Contenido principal -->
+  <main class="col-md-9 col-lg-10 p-5">
+    <header class="text-center mb-5">
+      <h1 class="fw-bold">PORTFOLI(O)</h1>
+    </header>
+
+    <!-- Sección Sobre mí -->
+    <section id="sobre-mi" class="mb-5">
+      <h2 class="text-center mb-3">SOBRE MI</h2>
+      <div class="card bg-secondary text-light p-4 mx-auto" style="max-width: 800px;">
+        <p>
+          Soy estudiante del último año de la Tecnicatura Universitaria en Programación, con enfoque en el desarrollo de software y el aprendizaje continuo. 
+          <br><br>Me interesa construir soluciones eficientes, mantener buenas prácticas y seguir ampliando mis conocimientos tanto a nivel académico como de forma autodidacta.
+          <br><br>Busco seguir creciendo profesionalmente mediante nuevos desafíos y proyectos que fortalezcan mi experiencia en el área.
+        </p>
+      </div>
+    </section>
+
+    <section id="tecnologias" class="text-center mb-5 margin">
+      <h2 class="mb-4">TECNOLOGIAS</h2>
+
+      <div class="d-flex justify-content-center gap-5 flex-wrap">
+        <div class="tech-card" data-tech="Java"><img src="../portfolio-astro/img/java.svg" alt="Java"></div>
+        <div class="tech-card" data-tech="Python"><img src="../portfolio-astro/img/python.svg" alt="Python"></div>
+        <div class="tech-card" data-tech="Spring Boot"><img src="../portfolio-astro/img/spring.png" alt="spring"></div>
+        <div class="tech-card" data-tech="PostgreSQL"><img src="../portfolio-astro/img/postgresql.svg" alt="postgresql"></div>
+      </div>
+
+      <div class="d-flex justify-content-center gap-5 flex-wrap">
+        <div class="tech-card" data-tech="Bootstrap"><img src="../portfolio-astro/img/bootstrap.svg" alt="bootstrap"></div>
+        <div class="tech-card" data-tech="Node.js"><img src="../portfolio-astro/img/node-js.svg" alt="node"></div>
+        <div class="tech-card" data-tech="MongoDB"><img src="../portfolio-astro/img/MongoDB-1.svg" alt="mongo"></div>
+        <div class="tech-card" data-tech="MySQL"><img src="../portfolio-astro/img/mysql.png" alt="mysql"></div>
+        <div class="tech-card" data-tech="Postman"><img src="../portfolio-astro/img/postman.svg" alt="postman"></div>
+      </div>
+
+      <div class="d-flex justify-content-center gap-5 flex-wrap">
+        <div class="tech-card" data-tech="HTML"><img src="../portfolio-astro/img/html.svg" alt="HTML"></div>
+        <div class="tech-card" data-tech="CSS"><img src="../portfolio-astro/img/css.svg" alt="CSS"></div>
+        <div class="tech-card" data-tech="JavaScript"><img src="../portfolio-astro/img/js.svg" alt="JavaScript"></div>
+        <div class="tech-card" data-tech="TypeScript"><img src="../portfolio-astro/img/typescript.svg" alt="TypeScript"></div>
+      </div>
+
+    </section>
+
+
+    <!-- Sección Proyectos -->
+    <section id="proyectos" class="mb-5">
+      <h2 class="mb-4 text-center">PROYECTOS</h2>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col">
+        <div class="card bg-secondary text-light">
+          <img src="../portfolio-astro/img/ppython.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Proyecto en Python</h5>
+            <p class="card-text">Proyecto desarrollado en Python enfocado en el procesamiento de datos y la 
+              creación de funciones eficientes para resolver problemas reales. Incluye manejo de estructuras, 
+              validaciones y una arquitectura clara y mantenible.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card bg-secondary text-light">
+          <img src="../portfolio-astro/img/pplaywright.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Proyecto en Playwright</h5>
+            <p class="card-text">Proyecto desarrollado con Playwright en Python para interactuar con páginas 
+              web de forma confiable, incluyendo navegación, extracción de información y ejecución de pruebas 
+              end-to-end. Implementa manejo de sesiones, selectores precisos y flujos robustos para garantizar 
+              resultados consistentes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card bg-secondary text-light">
+          <img src="../portfolio-astro/img/pjava.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Proyecto en Java</h5>
+            <p class="card-text">Proyecto desarrollado en Java utilizando Maven para la gestión de dependencias 
+              y la organización modular del código. Incluye una arquitectura limpia, uso de librerías externas y 
+              una estructura escalable que facilita el mantenimiento y la integración continua.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card bg-secondary text-light">
+          <img src="../portfolio-astro/img/pjavascript.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Proyecto en Javascript</h5>
+            <p class="card-text">Proyecto desarrollado en JavaScript enfocado en la creación de funcionalidades 
+              dinámicas y una experiencia de usuario fluida. Implementa lógica interactiva, manipulación del DOM 
+              y manejo eficiente de eventos para construir interfaces modernas y responsivas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="text-center mb-5">
+      <h2 class="mb-4">CONTACTO</h2>
+      <form class="w-75 mx-auto" id="contact-form" style="max-width: 500px;">
+        <div class="mb-3">
+          <input type="text" id="name" class="form-control bg-dark text-light border-light" placeholder="Tu nombre">
+        </div>
+        <div class="mb-3">
+          <input type="email" id="email" class="form-control bg-dark text-light border-light" placeholder="Tu email">
+        </div>
+        <div class="mb-3">
+          <textarea class="form-control bg-dark text-light border-light" id="message" rows="4" placeholder="Mensaje"></textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-light bg-dark">Enviar</button>
+        <div id="form-message" class="mt-3"></div>
+      </form>
+    </section>
+
+    <div class="hero__socials mt-5 d-flex justify-content-center gap-5 mb-5">
+      <div class="socials" data-tech="Whatsapp">
+        <a href="https://wa.me/152536532" target="_blank">
+          <img src="../portfolio-astro/img/whatsapp.svg" alt="whatsapp" class="iconSocial">
+        </a>
+      </div>
+      <div class="socials" data-tech="Email">
+        <a href="mailto:emmanuelcrespo_90@hotmail.com" target="_blank">
+          <img src="../portfolio-astro/img/mail.svg" alt="mail" class="iconSocial">
+        </a>
+      </div>
+      <div class="socials" data-tech="GitHub">
+        <a href="https://github.com/Manu-Crespo" target="_blank">
+          <img src="../portfolio-astro/img/github.svg" alt="github" class="iconSocial">
+        </a>
+      </div>
+      <div class="socials" data-tech="LinkedIn">
+        <a href="https://www.linkedin.com/in/emmanuel-crespo-a48389242/" target="_blank">
+          <img src="../portfolio-astro/img/linkedin.svg" alt="linkedin" class="iconSocial">
+        </a>
+      </div>
+    </div>
+
+        <!-- Modal CV -->
+        <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-dark text-light border-light">
+
+              <div class="modal-header border-secondary">
+                <h5 class="modal-title" id="cvModalLabel">Mi CV</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+              </div>
+
+              <div class="modal-body">
+                <iframe src="../portfolio-astro/CV.pdf" style="width:100%; height:75vh; border:0; border-radius: 10px;"></iframe>
+              </div>
+
+              <div class="modal-footer border-secondary d-flex justify-content-between">
+                <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cerrar</button>
+                <a href="../portfolio-astro/CV.pdf" download class="btn btn-primary">Descargar CV</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("Iz9IIWa8A0HEESAkn");
+</script>
+</body>
+</html>
