@@ -1,0 +1,198 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  background-color: #000;
+  /*background-image: url(https://static.vecteezy.com/system/resources/previews/007/153/281/non_2x/abstract-black-background-with-diagonal-lines-modern-dark-abstract-texture-design-for-presentations-or-business-free-vector.jpg);*/
+  background: 
+    linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),  url("https://static.vecteezy.com/system/resources/previews/007/153/281/non_2x/abstract-black-background-with-diagonal-lines-modern-dark-abstract-texture-design-for-presentations-or-business-free-vector.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+p{
+  font-size: 20px;
+}
+
+a{
+  font-size: 30px;
+}
+#sidebar {
+  position: sticky;   /* se queda pegado durante el scroll */
+  top: 0;
+  height: 100vh;
+  background-color: #1a1a1a;
+  /*min-height: 100px;*/
+  border-right: 2px solid #333;
+}
+
+#sidebar .nav-link {
+  font-size: 0.9rem;
+  margin: 0.4rem 0;
+  transition: 0.2s;
+}
+
+#sidebar .nav-link:hover {
+  background-color: #333;
+  border-radius: 5px;
+}
+
+.foto img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.arrow img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+
+.tech-card {
+  padding: 20px 30px;
+  font-weight: bold;
+  background-color: transparent;
+  transition: 0.3s;
+  cursor: default;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.tech-card img {
+  width: 100px;        /* tamaño horizontal */
+  height: 100px;       /* tamaño vertical */
+  object-fit: contain;
+}
+
+.tech-card:hover {
+  transform: scale(1.05);
+}
+
+.tech-card-edit img{
+  border-radius: 20px;
+  width: 100px;        /* tamaño horizontal */
+  height: 100px;       /* tamaño vertical */
+  object-fit: contain;
+}
+
+.tech-card-edit:hover {
+  transform: scale(1.05);
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+}
+
+.card img {
+  height: 350px;       /* la altura que quieras */
+  width: auto;        /* mantiene proporción */
+  object-fit: cover; 
+}
+
+.social-placeholder {
+  padding: 20px 30px;
+  font-weight: bold;
+  background-color: transparent;
+  transition: 0.3s;
+  cursor: default;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.social-placeholder img {
+  width: 100px;        /* tamaño horizontal */
+  height: 100px;       /* tamaño vertical */
+  object-fit: contain;
+}
+
+.social-placeholder:hover {
+  transform: scale(1.05);
+}
+
+form .form-control {
+  border-radius: 10px;
+}
+
+/* Color del placeholder */
+form input::placeholder,
+form textarea::placeholder {
+  color: #aaa;    /* Cambialo por el color que quieras */
+  opacity: 1;     /* Para que no se haga más claro automáticamente */
+}
+
+/* Placeholder cuando el input está enfocado (opcional, queda fachero) */
+form input:focus::placeholder,
+form textarea:focus::placeholder {
+  color: #888;
+}
+
+#arrow {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+#arrow:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.margin{
+  margin-top: 50px;
+}
+
+
+.geo-regular {
+  font-family: "Geo", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.geo-regular-italic {
+  font-family: "Geo", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  color: white;
+}
+
+/* Ajustes para pantallas chicas */
+@media (max-width: 767px) {
+  main {
+    padding: 2rem 1rem !important;
+  }
+
+  .tech-card {
+    padding: 15px 25px;
+  }
+}
