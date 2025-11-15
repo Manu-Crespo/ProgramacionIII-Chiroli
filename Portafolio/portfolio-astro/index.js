@@ -34,5 +34,35 @@ document.getElementById("scroll").addEventListener("click", () => {
       });
   });
 
+  document.querySelectorAll('#offcanvasSidebar .nav-link').forEach(link => {
+  link.addEventListener('click', function (e) {
+    const target = this.getAttribute('href');
+
+    // Si es un enlace con hash (#)
+    if (target.startsWith('#')) {
+      e.preventDefault(); // evitar que falle
+
+      // Cerrar offcanvas
+      const offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('offcanvasSidebar'));
+      offcanvas.hide();
+
+      // Esperar la animación
+      setTimeout(() => {
+        const el = document.querySelector(target);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 300); // El tiempo default del offcanvas
+    }
+  });
+});
+
+document.getElementById("cv-btn").addEventListener("click", function (e) {
+    e.preventDefault();
+    const enlace = document.createElement("a");
+    enlace.href = "/cv.pdf";     // ruta al archivo
+    enlace.download = "cv.pdf";  // nombre del archivo
+    enlace.click();
+});
 
 

@@ -127,11 +127,18 @@ h5 {
   text-decoration: underline;
 }
 
-.tech-card {
+.socials {
   position: relative;
 }
 
-.tech-card::after {
+.iconSocial {
+  width: 100px;        
+  height: 100px;       
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.socials::after {
   content: attr(data-tech);
   position: absolute;
   bottom: -25px;
@@ -148,11 +155,9 @@ h5 {
   white-space: nowrap;
 }
 
-.tech-card:hover::after {
+.socials:hover::after {
   opacity: 1;
 }
-
-
 
 form .form-control {
   border-radius: 10px;
@@ -201,7 +206,6 @@ form .form-control {
   margin-top: 50px;
 }
 
-
 .geo-regular {
   font-family: "Geo", sans-serif;
   font-weight: 400;
@@ -214,8 +218,6 @@ form .form-control {
   font-style: italic;
 }
 
-
-
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
@@ -225,12 +227,11 @@ form .form-control {
   color: white;
 }
 
-/* Ajustes para pantallas chicas */
 @media (max-width: 767px) {
 
   html, body {
-  overflow-x: hidden;
-}
+    overflow-x: hidden;
+  }
 
   main {
     padding: 2rem 1rem !important;
@@ -247,9 +248,9 @@ form .form-control {
     border-radius: 50%;
   }
 
-  /* Ajustar la lista del menú */
+  /* Lista del menú */
   #offcanvasSidebar .nav {
-    gap: 1.2rem; /* separación entre items */
+    gap: 1.2rem;
     margin-top: 1rem;
   }
 
@@ -260,37 +261,61 @@ form .form-control {
     letter-spacing: 1px;
   }
 
-  /* Ajuste general del offcanvas */
   #offcanvasSidebar .offcanvas-body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 0.5rem;
   }
 
-  /* Espaciado superior e inferior */
   #offcanvasSidebar .offcanvas-header {
     padding-bottom: 0;
   }
 
-  #offcanvasSidebar .offcanvas-body {
-    padding-top: 0.5rem;
+/* Íconos de contacto */
+  .hero__socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
   }
 
-  .modal-dialog {
-  max-width: 100% !important;
-  margin: 0;
+  .socials {
+    width: 55px !important;
+    height: 55px !important;
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .modal-content {
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  /* El iframe del CV debe ajustarse */
-  .modal-body iframe {
+  .iconSocial {
     width: 100% !important;
-    height: 75vh; /* Ajusta la altura a tus gustos */
-    border: none;
-    display: block;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  #tecnologias .d-flex {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;       /* un gap más suave para mobile */
+  }
+  .tech-card {
+    width: 55px !important;
+    height: 55px !important;
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tech-card img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
   }
 }
